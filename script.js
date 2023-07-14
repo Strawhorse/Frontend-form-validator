@@ -25,6 +25,18 @@ function validateForm() {
         messageContainer.style.borderColor = 'red';
     }
 
+    // password match checker
+    if(password1El.value === password2El.value) {
+        passwordsMatch = true;
+        password1El.style.borderColor = 'green';
+        password2El.style.borderColor = 'green';
+    }
+    else {
+        passwordsMatch = false;
+        message.textContent = 'Please double-check passwords match!'
+        message.style.color = 'red';
+        
+    }
 
 }
 
