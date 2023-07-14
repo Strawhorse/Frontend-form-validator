@@ -23,6 +23,7 @@ function validateForm() {
         message.textContent = 'Please complete all fields';
         message.style.color = 'red';
         messageContainer.style.borderColor = 'red';
+        return;
     }
 
     // password match checker
@@ -30,12 +31,23 @@ function validateForm() {
         passwordsMatch = true;
         password1El.style.borderColor = 'green';
         password2El.style.borderColor = 'green';
-    }
-    else {
+    } else {
         passwordsMatch = false;
-        message.textContent = 'Please double-check passwords match!'
+        message.textContent = 'Passwords not matching!'
         message.style.color = 'red';
-        
+        messageContainer.style.borderColor = 'red';
+        password1El.style.borderColor = 'red';
+        password2El.style.borderColor = 'red';
+        return;
+    }
+
+    // if form is valid and passwords match
+
+    if(isValid && passwordsMatch) {
+        message.textContent = 'Registered succesfully!'
+        message.style.color = 'green';
+        messageContainer.style.borderColor = 'green';
+
     }
 
 }
@@ -44,10 +56,8 @@ function validateForm() {
 // Function to process form data
 function processFormData(e) {
     e.preventDefault();
-
     // checking validity of form data
     validateForm();
-
 }
 
 
