@@ -9,6 +9,8 @@ const message = document.getElementById('message');
 
 // boolean to check for form validity
 let isValid = false;
+let passwordsMatch = false;
+
 
 
 function validateForm() {
@@ -17,9 +19,11 @@ function validateForm() {
     isValid = form.checkValidity(); 
 
     // style the main message at the bottom for an error
-    message.textContent = 'Please complete all fields';
-    message.style.color = 'red';
-    messageContainer.style.borderColor = 'red';
+    if(!isValid) {
+        message.textContent = 'Please complete all fields';
+        message.style.color = 'red';
+        messageContainer.style.borderColor = 'red';
+    }
 
 
 }
