@@ -7,13 +7,31 @@ const messageContainer = document.querySelector('.message-container');
 const message = document.getElementById('message');
 
 
+// boolean to check for form validity
+let isValid = false;
+
+
+function validateForm() {
+
+    //  using the constraint API
+    isValid = form.checkValidity(); 
+
+    // style the main message at the bottom for an error
+    
+
+}
+
 
 // Function to process form data
 function processFormData(e) {
     e.preventDefault();
+
+    // checking validity of form data
+    validateForm();
+
 }
 
 
 // enable to form submit using the submit button
-form.addEventListener('submit', processFormData);
+form.addEventListener('submit',processFormData);
 
