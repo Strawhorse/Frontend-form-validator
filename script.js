@@ -52,12 +52,31 @@ function validateForm() {
 
 }
 
+// function to store the form data submitted by the form
+function storeFormData() {
+    const user = {
+        name: form.name.value,
+        telephone: form.telephone.value,
+        email: form.email.value,
+        website: form.website.value,
+        password: form.password.value
+    };
+    // you'd now send to a server etc
+    console.log(user);
+}
+
+
 
 // Function to process form data
 function processFormData(e) {
     e.preventDefault();
     // checking validity of form data
     validateForm();
+
+    // submit form data if valid
+    if(isValid && passwordsMatch) {
+        storeFormData();
+    }
 }
 
 
