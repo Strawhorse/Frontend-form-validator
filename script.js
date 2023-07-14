@@ -17,7 +17,10 @@ function validateForm() {
     isValid = form.checkValidity(); 
 
     // style the main message at the bottom for an error
-    
+    message.textContent = 'Please complete all fields';
+    message.style.color = 'red';
+    messageContainer.style.borderColor = 'red';
+
 
 }
 
